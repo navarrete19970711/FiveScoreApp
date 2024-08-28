@@ -33,6 +33,7 @@ class MainActivity : AppCompatActivity() {
             if (num == 5){
                 val intent = Intent(this,GameClear::class.java)
                 startActivity(intent)
+                finish()
             }else{
                 tvScore.text = num.toString()
             }
@@ -46,6 +47,7 @@ class MainActivity : AppCompatActivity() {
             if (num == -5){
                 val intent = Intent(this,GameOver::class.java)
                 startActivity(intent)
+                finish()
             }else{
                 tvScore.text = num.toString()
             }

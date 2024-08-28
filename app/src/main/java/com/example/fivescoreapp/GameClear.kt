@@ -21,6 +21,7 @@ class GameClear : AppCompatActivity() {
 
         // 6) REPLAYボタンを押したらメインに渡す&自アクティビティ終了
         val btnReplay:Button = findViewById(R.id.btnReplay)
+
         btnReplay.setOnClickListener {
             val intent = Intent(this,MainActivity::class.java)
             startActivity(intent)

@@ -1,6 +1,5 @@
 package com.example.fivescoreapp
 
-import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
@@ -31,9 +30,12 @@ class MainActivity : AppCompatActivity() {
             num++
             // 4) numが5になったらGameClear
             if (num == 5){
-                val intent = Intent(this,GameClear::class.java)
+                /*val intent = Intent(this,GameClear::class.java)
                 startActivity(intent)
-                finish()
+                finish()*/
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.fl,GameClearFragment.newInstance())
+                    .commit()
             }else{
                 tvScore.text = num.toString()
             }
@@ -45,9 +47,12 @@ class MainActivity : AppCompatActivity() {
             num--
             // 5) numが-5になったらGameOver
             if (num == -5){
-                val intent = Intent(this,GameOver::class.java)
+                /*val intent = Intent(this,GameOver::class.java)
                 startActivity(intent)
-                finish()
+                finish()*/
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.fl,GameOverFragment.newInstance())
+                    .commit()
             }else{
                 tvScore.text = num.toString()
             }
